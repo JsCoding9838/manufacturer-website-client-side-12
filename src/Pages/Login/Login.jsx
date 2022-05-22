@@ -4,42 +4,46 @@ import auth from "../../firebase.init";
 import { useForm } from "react-hook-form";
 import Loading from "../Shared/Loading";
 import { Link, useLocation, useNavigate } from "react-router-dom";
-// import useToken from "../../hooks/useToken";
+import useToken from "../../hooks/useToken";
 
 const Login = () => {
-  const [signInWithGoogle, googleUser, googleLoading, googleError] = useSignInWithGoogle(auth);
-  const { register, formState: { errors }, handleSubmit, } = useForm();
-
-  const [signInWithEmailAndPassword, user, loading, error] = useSignInWithEmailAndPassword(auth);
-
-//   const [token] = useToken(user || googleUser)
-
-//   let signInError;
-//   const navigate = useNavigate();
-  const location = useLocation();
-  let from = location.state?.from?.pathname || "/";
-
-//   useEffect( () =>{
-//     if (token) {
-//       navigate(from, { replace: true });
-//     }
-//   }, [token, from, navigate])
-
-//   if (loading || googleLoading) {
-//     return <Loading />;
-//   }
-
-//   if (error || googleError) {
-//     signInError = (
-//       <p className="text-red-500">{error?.message || googleError?.message}</p>
-//     );
-//   }
-
-    const onSubmit = (data) => {
-
-        console.log(data);
-        signInWithEmailAndPassword(data.email, data.password);
+    const [signInWithGoogle, googleUser, googleLoading, googleError] = useSignInWithGoogle(auth);
+    const {
+      register,
+      formState: { errors },
+      handleSubmit,
+    } = useForm();
+  
+    const [signInWithEmailAndPassword, user, loading, error] = useSignInWithEmailAndPassword(auth);
+  
+    const [token] = useToken(user || googleUser);
+  
+    let signInError;
+    const navigate = useNavigate();
+    const location = useLocation();
+    let from = location.state?.from?.pathname || "/";
+  
+    useEffect( () =>{
+      if (token) {
+        navigate(from, { replace: true });
+      }
+    }, [token, from, navigate]);
+  
+    if (loading || googleLoading) {
+      return <Loading />;
     };
+  
+    if (error || googleError) {
+      signInError = (
+        <p className="text-red-500">{error?.message || googleError?.message}</p>
+      );
+    }
+  
+    const onSubmit = (data) => {
+      // console.log(data);
+      signInWithEmailAndPassword(data.email, data.password);
+    };
+  
 
     return (
         <div className="flex h-screen justify-center items-center">
@@ -114,7 +118,7 @@ const Login = () => {
                         )}
                     </label>
                     </div>
-                    {/* {signInError} */}
+                    {signInError}
                     <input
                     className="btn w-full max-w-xs text-white"
                     type="submit"

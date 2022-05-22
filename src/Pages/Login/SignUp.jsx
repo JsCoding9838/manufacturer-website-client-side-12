@@ -8,7 +8,7 @@ import auth from "../../firebase.init";
 import { useForm } from "react-hook-form";
 import Loading from "../Shared/Loading";
 import { Link, useNavigate } from "react-router-dom";
-// import useToken from "../../hooks/useToken";
+import useToken from "../../hooks/useToken";
 
 const SignUp = () => {
   const [signInWithGoogle, googleUser, googleLoading, googleError] = useSignInWithGoogle(auth);
@@ -16,38 +16,36 @@ const SignUp = () => {
 
   const [createUserWithEmailAndPassword, user, loading, error] = useCreateUserWithEmailAndPassword(auth);
 
-//   const [updateProfile, updating, updateError] = useUpdateProfile(auth);
+  const [updateProfile, updating, updateError] = useUpdateProfile(auth);
 
-//   const [token] = useToken(user || googleUser);
+  const [token] = useToken(user || googleUser);
 
-//   const navigate = useNavigate();
+  const navigate = useNavigate();
 
-//   let signInError;
+  let signInError;
 
-//   if (loading || googleLoading || updating) {
-//     return <Loading />;
-//   }
+  if (loading || googleLoading || updating) {
+    return <Loading />;
+  }
 
-//   if (error || googleError || updateError) {
-//     signInError = (
-//       <p className="text-red-500">
-//         {error?.message || googleError?.message || updateError?.message}
-//       </p>
-//     );
-//   }
+  if (error || googleError || updateError) {
+    signInError = (
+      <p className="text-red-500">
+        {error?.message || googleError?.message || updateError?.message}
+      </p>
+    );
+  }
 
-//   if (token) {
-//     // console.log(user || googleUser);
-//     navigate("/appointment");
-//   }
-    const onSubmit = async (data) => {
-        console.log(data)
-        await createUserWithEmailAndPassword(data.email, data.password);
-        // await updateProfile({ displayName: data.name });
-        // console.log("update done");
-        // navigate("/appointment");
-    };
-
+  if (token) {
+    // console.log(user || googleUser);
+    navigate("/appointment");
+  }
+  const onSubmit = async (data) => {
+    await createUserWithEmailAndPassword(data.email, data.password);
+    await updateProfile({ displayName: data.name });
+    // console.log("update done");
+    // navigate("/appointment");
+  };
     return (
     <div className="flex h-screen justify-center items-center">
       <div className="card  bg-base-100 shadow-xl">
@@ -145,7 +143,7 @@ const SignUp = () => {
                 )}
               </label>
             </div>
-            {/* {signInError} */}
+            {signInError}
             <input
               className="btn w-full max-w-xs text-white"
               type="submit"
