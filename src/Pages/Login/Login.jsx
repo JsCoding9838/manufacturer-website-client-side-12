@@ -124,7 +124,7 @@ const Login = () => {
 
                 <p className="mx-auto">
                     <small>
-                    New to Doctors Portal?{" "}
+                    New to Manufacturer User?{" "}
                     <Link className="text-primary" to="/signup">
                         Create New Account
                     </Link>
