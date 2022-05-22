@@ -18,22 +18,16 @@ const Navber = () => {
           <Link to="/">Home</Link>
         </li>
         <li>
-          <Link to="/about">About</Link>
-        </li>
-        <li>
-          <Link to="/appointment">Appointment</Link>
-        </li>
-        <li>
-          <Link to="/review">Review</Link>
-        </li>
-        <li>
-          <Link to="/contact">Contact</Link>
+          <Link to="/blogs">Blogs</Link>
         </li>
         {user && (
           <li>
             <Link to="/dashboard">Dashboard</Link>
           </li>
         )}
+        <li>
+          <Link to="/myportfolio">My Portfolio</Link>
+        </li>
       </>
     );
 
@@ -48,7 +42,7 @@ const Navber = () => {
                   className="h-5 w-5"
                   fill="none"
                   viewBox="0 0 24 24"
-                  stroke="currentColor"
+                  
                 >
                   <path
                     strokeLinecap="round"
