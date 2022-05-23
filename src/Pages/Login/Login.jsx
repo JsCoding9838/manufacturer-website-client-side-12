@@ -5,14 +5,11 @@ import { useForm } from "react-hook-form";
 import Loading from "../Shared/Loading";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import useToken from "../../hooks/useToken";
+import { toast } from "react-toastify";
 
 const Login = () => {
     const [signInWithGoogle, googleUser, googleLoading, googleError] = useSignInWithGoogle(auth);
-    const {
-      register,
-      formState: { errors },
-      handleSubmit,
-    } = useForm();
+    const { register, formState: { errors }, handleSubmit} = useForm();
   
     const [signInWithEmailAndPassword, user, loading, error] = useSignInWithEmailAndPassword(auth);
   
@@ -24,24 +21,25 @@ const Login = () => {
     let from = location.state?.from?.pathname || "/";
   
     useEffect( () =>{
-      if (token) {
-        navigate(from, { replace: true });
-      }
+        if (token) {
+            toast.success('Sign-In Successfully ')
+            navigate(from, { replace: true });
+        }
     }, [token, from, navigate]);
   
     if (loading || googleLoading) {
-      return <Loading />;
+        return <Loading />;
     };
   
     if (error || googleError) {
-      signInError = (
-        <p className="text-red-500">{error?.message || googleError?.message}</p>
-      );
+        signInError = (
+            <p className="text-red-500">{error?.message || googleError?.message}</p>
+        );
     }
   
     const onSubmit = (data) => {
-      // console.log(data);
-      signInWithEmailAndPassword(data.email, data.password);
+        // console.log(data);
+        signInWithEmailAndPassword(data.email, data.password);
     };
   
 

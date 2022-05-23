@@ -6,7 +6,6 @@ import NotFound from './Pages/NotFound/NotFound';
 import Navber from './Pages/Shared/Navber';
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-import ManageTool from './Pages/ManageTools.jsx/ManageTool';
 import RequireAuth from './Pages/Login/RequireAuth';
 import { Route, Routes } from 'react-router-dom';
 import AllServiceTools from './Pages/AllServiceTools/AllServiceTools';
@@ -16,6 +15,7 @@ import Dashboard from './Pages/Dashboard/Dashboard';
 import MyProfile from './Pages/MyProfile/MyProfile';
 import Blogs from './Pages/Blogs/Blogs';
 import MyPortfolio from './Pages/MyPortfolio/MyPortfolio';
+import Purchase from './Pages/Purchase.jsx/Purchase';
 
 function App() {
   return (
@@ -24,10 +24,9 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />}></Route>
         <Route path="/Home" element={<Home />}></Route>
-        <Route path="/tools" element={<ManageTool />}></Route>
-        <Route path="/products/:id" element={
+        <Route path="/purchase/:id" element={
             <RequireAuth>
-              <ManageTool />
+              <Purchase />
             </RequireAuth>
           }>
 

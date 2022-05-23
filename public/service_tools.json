@@ -1,82 +1,91 @@
 [
     {
+    "id": 1,
     "name": "Hardware",
     "image": "https://4.bp.blogspot.com/-uQR_63Pr_8c/WikXMzY3jII/AAAAAAAAH3I/-1hPkPQOLNYrrC2obTKQINEZKT-1_hN7gCLcBGAs/s200/Hardware2.jpg",
     "description": "the physical and electronic parts of a computer, rather than the instructions it follows] (<কমপিউটারের>যন্ত্রাংশ): We supply computer hardware to businesses.",
     "min_order_quantity": 15,
     "available_quantity": 150,
-    "price_rer_unit": 99
+    "price_per_unit": 99
     },
 
     {
+    "id": 2,
     "name": "Drill",
     "image": "https://2.bp.blogspot.com/-KYOMaxAcJ7A/WilAtK6An5I/AAAAAAAAH7E/zOkfiP8osrQSOf16pMZhYysyqOiM97hXwCLcBGAs/s1600/Drill.jpg",
     "description": "A drill is a tool fitted with a cutting tool attachment or driving tool attachment, usually a drill bit or driver bit, used for boring holes] (তুরপুন): There will be a fire drill sometime this morning.",
     "min_order_quantity": 15,
     "available_quantity": 150,
-    "price_rer_unit": 99
+    "price_per_unit": 99
     },
 
     {
+    "id": 3,
     "name": "Pneumatic Drill",
     "image": "https://1.bp.blogspot.com/--M1oTfk0qog/WilBUz72eUI/AAAAAAAAH7M/SxACAsmYZ94uGhRviKfxiw_v2iI_L775gCLcBGAs/s1600/Pneumatic-drill.jpg",
     "description": "A powerful tool which is held in the hand and operates by air pressure, used for breaking hard surface such as road.",
     "min_order_quantity": 15,
     "available_quantity": 150,
-    "price_rer_unit": 99
+    "price_per_unit": 99
     },
 
     {
+    "id": 4,
     "name": "Adze",
     "image": "https://4.bp.blogspot.com/-Qz0g02KUOM0/WwAiqlR6eKI/AAAAAAAAIok/1wg3g91Kc-UyHlH-O7uSlWmhhtii_eADQCLcBGAs/s1600/adze.jpg",
     "description": "a heavy tool with a curved bled at the right angle of about 90º to the handle, used for cutting or shaping large pieces of wood",
     "min_order_quantity": 15,
     "available_quantity": 150,
-    "price_rer_unit": 99
+    "price_per_unit": 99
     },
 
     {
+    "id": 5,
     "name": "Saw",
     "image": "https://2.bp.blogspot.com/-l-_0NK82xDE/WiklMHR1FaI/AAAAAAAAH5I/_VqNu0bTUd84of72TMevFkU2FqHcakn3QCLcBGAs/s1600/Saw.jpg",
     "description": "A tool that has a long blade with sharp points (called teeth) along one of its edges. A saw is moved backwards and forwards by hand or driven by electricity and is used for cutting wood or metal",
     "min_order_quantity": 15,
     "available_quantity": 150,
-    "price_rer_unit": 99
+    "price_per_unit": 99
     },
 
     {
+    "id": 6,
     "name": "Screwdriver",
     "image": "https://1.bp.blogspot.com/-gqi-GtyT2-E/WikhdBGCeUI/AAAAAAAAH4Q/9E0tF9NowIIc9Q1-LZB38XUGxoJ_VlNZQCLcBGAs/s1600/Screwdriver.jpg",
     "description": "a type of screwdriver with two small blades on the end shaped like a cross. It is named after the American H F Philips who invented it, and is used with a Phillips screw.",
     "min_order_quantity": 15,
     "available_quantity": 150,
-    "price_rer_unit": 99
+    "price_per_unit": 99
     },
     
     {
+    "id": 7,
     "name": "Pipe Wrench",
     "image": "https://2.bp.blogspot.com/-ts3GWwDbuOE/WikdSy4KqkI/AAAAAAAAH4A/NF_OaQng6-szgyVC4PGhJH2D4-ZoJTwKwCLcBGAs/s320/Pipe-wrench.jpg",
     "description": "A heavy tool used for turning a soft iron pipes and fittings with a rounded surface, the design of the adjustable jaw allows it to lock in the frame, such that any forward pressure on the handle tends to pull the jaws tighter together.",
     "min_order_quantity": 15,
     "available_quantity": 150,
-    "price_rer_unit": 99
+    "price_per_unit": 99
     },
     
     {
+    "id": 8,
     "name": "Hatchet",
     "image": "https://2.bp.blogspot.com/-QmQF8oYijI0/Wik7cmfpIHI/AAAAAAAAH6M/BFuytguFBRAyIy6rWEnwLWinUfyCy0WgACLcBGAs/s1600/Axe.jpg",
     "description": "a tool with a wooden handle and a heavy metal blade, used for chopping wood, cutting down trees, etc. (কুড়াল): Raju used an axe and to chop down the old apple tree.",
     "min_order_quantity": 15,
     "available_quantity": 150,
-    "price_rer_unit": 99
+    "price_per_unit": 99
     },
     
     {
+    "id": 9,
     "name": "Claw Hammer",
     "image": "https://1.bp.blogspot.com/-2tga2qY-xtw/XU17j8LkOAI/AAAAAAAAMuk/hUNWMjjOfggJjYMelbnHINwx7B3o9U80gCLcBGAs/s1600/Claw-hammer.jpg",
-    "description": "A hammer with one split, curvefrom, some other object. Generally, it is associated with woodworking but is not limited to use with wood products.",
+    "description": "A hammer with one split, curved side that primarily is used for driving nails into, or pulling out nails from, some other object. Generally, it is associated with woodworking but is not limited to use with wood products.",
     "min_order_quantity": 15,
     "available_quantity": 150,
-    "price_rer_unit": 99
+    "price_per_unit": 99
     }
 ]

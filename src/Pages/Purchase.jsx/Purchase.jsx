@@ -1,6 +1,7 @@
 import React from 'react';
 
-const ManageTool = () => {
+const Purchase = () => {
+    
     return (
         <div>
             <h2>manage tools</h2>
@@ -8,4 +9,4 @@ const ManageTool = () => {
     );
 };
 
-export default ManageTool;
+export default Purchase;

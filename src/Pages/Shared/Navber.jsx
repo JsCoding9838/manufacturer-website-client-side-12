@@ -2,6 +2,7 @@ import { signOut } from 'firebase/auth';
 import React from 'react';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import { Link } from 'react-router-dom';
+import { toast } from 'react-toastify';
 import auth from '../../firebase.init';
 
 const Navber = () => {
@@ -9,6 +10,7 @@ const Navber = () => {
 
     const logout = () => {
       signOut(auth);
+      toast.success('Sign-out Successfully ')
       localStorage.removeItem("Access_token");
     };
 
