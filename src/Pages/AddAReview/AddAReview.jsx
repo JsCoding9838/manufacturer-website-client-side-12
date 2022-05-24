@@ -2,12 +2,12 @@ import axios from 'axios';
 import React from 'react';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import { toast } from 'react-toastify';
-import auth from '../../Firebase/Firebase.init';
+import auth from '../../firebase.init';
 
 
 const AddAReview = () => {
     const [user] = useAuthState(auth);
-    const {email,photoURL,displayName} = user
+    const {email,photoURL,displayName} = user;
   
     
     const onSubmit = async(event) => {
@@ -19,6 +19,7 @@ const AddAReview = () => {
         if(data.insertedId){
             toast.success('your review successfully')
         }
+        event.target.reset();
     }
     return (
         <div>

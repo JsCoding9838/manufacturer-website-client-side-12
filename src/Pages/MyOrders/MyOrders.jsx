@@ -13,7 +13,7 @@ const MyOrders = () => {
   }
   return (
     <div>
-      <p className="text-4xl text-secondary font-bold pt-6">MY ORDERS</p>
+      <p className="text-[20px] text-[#2BAAA9] font-semibold py-6 pl-4">MY ORDERS</p>
       <div className="grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-4">
         {myOrders.map(order => <MyOrder refetch={refetch} key={ order._id} order={ order } />)}
       </div>
