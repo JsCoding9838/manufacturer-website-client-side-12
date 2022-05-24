@@ -4,7 +4,7 @@ import React from 'react';
 const Footer = () => {
     return (
         <footer className="bg-gray-200 p-10">
-            <div className='footer'>
+            <div className='footer grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 sm:justify-items-center'>
                 <div>
                     <span className="footer-title">Services</span>
                     <a className="link link-hover">Branding</a>

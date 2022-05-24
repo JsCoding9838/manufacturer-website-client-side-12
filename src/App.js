@@ -23,8 +23,8 @@ function App() {
       <Navber />
       <Routes>
         <Route path="/" element={<Home />}></Route>
-        <Route path="/Home" element={<Home />}></Route>
-        <Route path="/purchase/:id" element={
+        <Route path="/home" element={<Home />}></Route>
+        <Route path="/product/:id" element={
             <RequireAuth>
               <Purchase />
             </RequireAuth>
@@ -38,14 +38,14 @@ function App() {
           }>
 
         </Route>
-        <Route path="/addAReview" element={
+        <Route path="/addareview" element={
             <RequireAuth>
               <AddAReview />
             </RequireAuth>
           }>
 
         </Route>
-        <Route path="/allServiceTools" element={
+        <Route path="/allservicetools" element={
             <RequireAuth>
               <AllServiceTools />
             </RequireAuth>

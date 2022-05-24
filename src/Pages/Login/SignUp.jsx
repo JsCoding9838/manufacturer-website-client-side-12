@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import {
   useCreateUserWithEmailAndPassword,
   useSignInWithGoogle,
@@ -7,8 +7,9 @@ import {
 import auth from "../../firebase.init";
 import { useForm } from "react-hook-form";
 import Loading from "../Shared/Loading";
-import { Link, useNavigate } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import useToken from "../../hooks/useToken";
+import { toast } from "react-toastify";
 
 const SignUp = () => {
   const [signInWithGoogle, googleUser, googleLoading, googleError] = useSignInWithGoogle(auth);
@@ -18,11 +19,15 @@ const SignUp = () => {
 
   const [updateProfile, updating, updateError] = useUpdateProfile(auth);
 
+
   const [token] = useToken(user || googleUser);
 
-  const navigate = useNavigate();
+
+  
+console.log(user);
 
   let signInError;
+  const navigate = useNavigate();
 
   if (loading || googleLoading || updating) {
     return <Loading />;
@@ -38,13 +43,13 @@ const SignUp = () => {
 
   if (token) {
     // console.log(user || googleUser);
-    navigate("/appointment");
+    navigate("/home");
   }
-  const onSubmit = async (data) => {
-    await createUserWithEmailAndPassword(data.email, data.password);
-    await updateProfile({ displayName: data.name });
+  const onSubmit = async ({name,password,email}) => {
+   
+    await createUserWithEmailAndPassword(email, password);
+    await updateProfile({ displayName: name });
     // console.log("update done");
-    // navigate("/appointment");
   };
     return (
     <div className="flex h-screen justify-center items-center">

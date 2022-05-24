@@ -1,7 +1,7 @@
 import { signOut } from 'firebase/auth';
 import React from 'react';
 import { useAuthState } from 'react-firebase-hooks/auth';
-import { Link } from 'react-router-dom';
+import { Link, NavLink } from 'react-router-dom';
 import { toast } from 'react-toastify';
 import auth from '../../firebase.init';
 
@@ -16,19 +16,19 @@ const Navber = () => {
 
     const menuItems = (
       <>
-        <li>
-          <Link to="/">Home</Link>
+        <li className="">
+          <NavLink to="/">Home</NavLink>
         </li>
         <li>
-          <Link to="/blogs">Blogs</Link>
+          <NavLink to="/blogs">Blogs</NavLink>
         </li>
-        {user && (
-          <li>
-            <Link to="/dashboard">Dashboard</Link>
-          </li>
-        )}
+          {user && (
+            <li>
+              <NavLink to="/dashboard">Dashboard</NavLink>
+            </li>
+          )}
         <li>
-          <Link to="/myportfolio">My Portfolio</Link>
+          <NavLink to="/myportfolio">My Portfolio</NavLink>
         </li>
       </>
     );
@@ -44,6 +44,7 @@ const Navber = () => {
                   className="h-5 w-5"
                   fill="none"
                   viewBox="0 0 24 24"
+                  stroke="currentColor"
                   
                 >
                   <path
@@ -61,27 +62,36 @@ const Navber = () => {
                 {menuItems}
               </ul>
             </div>
-            <Link to="/" className="font-semibold text-[18px] md:text-xl">
+            <Link to="/" className="font-semibold text-[16px] md:text-xl">
               Manufactur's Care
             </Link>
           </div>
           <div className="navbar-center hidden lg:flex">
-            <ul className="menu menu-horizontal p-0">{menuItems}</ul>
+            <ul className="menu menu-horizontal p-0 space-x-5">
+              {menuItems}
+            </ul>
           </div>
           <div className="navbar-end">
-            <ul>
-              <li>
-                {user ? (
-                  <button className="btn btn-ghost" onClick={logout}>
-                    Sign Out
-                  </button>
-                ) : (
-                  <Link to="/login" className="btn btn-ghost ">
-                    Login
-                  </Link>
-                )}
-              </li>
-            </ul>
+            {user ? <div class="dropdown dropdown-end">
+              <label tabindex="0" >
+              <div class="avatar online">
+                
+                <div class="w-10 rounded-full">
+                  <img src="https://api.lorem.space/image/face?hash=28212" alt='' />
+                </div> 
+                </div>
+
+              </label>
+              <ul tabindex="0" class="dropdown-content menu flex text-black  p-4  shadow bg-base-100 rounded-box md:w-96">
+              <div className='space-y-4'>
+                <li className='border-b text-lg font-semibold'>Name: {user.displayName}</li>
+                <li className='border-b text-lg font-semibold'>Email: {user.email}</li>
+                <li className='border-b text-lg font-semibold'>Profile<input type="file" id="" /></li>
+                <li className='btn btn-outline' onClick={logout} >Sign Out</li>
+              </div>
+              </ul>
+            </div>
+            :  <Link to='/signup' class="btn">Sign Up</Link>}
           </div>
         </div>
       </>

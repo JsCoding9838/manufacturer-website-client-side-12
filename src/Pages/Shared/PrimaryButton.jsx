@@ -5,9 +5,7 @@ const PrimaryButton = ({ children }) => {
     <button className="btn btn-primary border-none uppercase font-bold text-white bold bg-gradient-to-r  from-sky-500 to-[#2BAAA9]">
       {children}
     </button>
-    // <button className="btn btn-primary border-none uppercase font-bold text-white bold bg-gradient-to-r  from-sky-500 to-indigo-500">
-    //   {children}
-    // </button>
+    
   );
 };
 

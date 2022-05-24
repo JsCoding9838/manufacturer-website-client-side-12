@@ -32,9 +32,9 @@ const Tools = () => {
                             </p>
                             <p className="font-semibold">Min-order-quantity: <span className="font-normal">{tool?.min_order_quantity}</span></p>
                             <p className="font-semibold">Available-quantity: <span className="font-normal">{tool?.available_quantity}</span></p>
-                            <p className="font-semibold">Price-per-unit: $<span className="font-normal">{tool?.price_rer_unit}</span></p>
+                            <p className="font-semibold">Price-per-unit: $<span className="font-normal">{tool?.price_per_unit}</span></p>
                             <div className="card-actions justify-end">
-                            <Link to={`purchase/${tool._id}`} className="btn  btn-primary border-none bg-gradient-to-r  from-sky-500 to-[#2BAAA9]">
+                            <Link to={`product/${tool._id}`} className="btn  btn-primary border-none bg-gradient-to-r  from-sky-500 to-[#2BAAA9]">
                                 Purchase Now
                             </Link>
                             </div>
