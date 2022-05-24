@@ -62,7 +62,7 @@ const Navber = () => {
                 {menuItems}
               </ul>
             </div>
-            <Link to="/" className="font-semibold text-[16px] md:text-xl">
+            <Link to="/" className="font-semibold text-[18px] md:text-xl">
               Manufactur's Care
             </Link>
           </div>
@@ -72,11 +72,11 @@ const Navber = () => {
             </ul>
           </div>
           <div className="navbar-end">
-            {user ? <div class="dropdown dropdown-end">
+            {user ? <> <div class="dropdown dropdown-end">
               <label tabindex="0" >
               <div class="avatar online">
                 
-                <div class="w-10 rounded-full">
+                <div class="w-8 rounded-full">
                   <img src="https://api.lorem.space/image/face?hash=28212" alt='' />
                 </div> 
                 </div>
@@ -91,6 +91,10 @@ const Navber = () => {
               </div>
               </ul>
             </div>
+            <label htmlFor="dashboard-sidebar" className=" drawer-button pl-4 lg:hidden">
+            <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h8m-8 6h16" /></svg>
+            </label>
+            </>
             :  <Link to='/signup' class="btn">Sign Up</Link>}
           </div>
         </div>
