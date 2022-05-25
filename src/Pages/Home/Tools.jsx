@@ -5,7 +5,7 @@ const Tools = () => {
     const [tools, setTools] = useState([]);
 
     useEffect(() => {
-        fetch("http://localhost:5000/tools")
+        fetch("https://fathomless-beach-67972.herokuapp.com/tools")
         .then((res) => res.json())
         .then((data) => {
             return setTools(data);
@@ -26,7 +26,7 @@ const Tools = () => {
                             />
                         </figure>
                         <div className="card-body">
-                            <h2 className="card-title">{tool?.name}</h2>
+                            <h2 className="card-title text-[#2BAAA9]">{tool?.name}</h2>
                             <p className="">
                             {tool?.description}
                             </p>
@@ -42,7 +42,7 @@ const Tools = () => {
                     </div>)}
                 </div>
                 <div className="text-2xl md:text-4xl font-semibold text-center py-5 card-actions justify-end">
-                    <Link to="allServiceTools" className="btn btn-wide hover:btn-outline font-semibold border-none bg-gradient-to-r  from-[#2BAAA9] to-sky-800">See All Tools</Link>
+                    <Link to="allServiceTools" className="btn btn-wide outline font-semibold border-none bg-gradient-to-r  from-[#2BAAA9] to-sky-800">See All Tools</Link>
                 </div>
             </div>
         </>

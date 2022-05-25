@@ -22,29 +22,34 @@ const AddAReview = () => {
         event.target.reset();
     }
     return (
-        <div>
-            <p className="text-4xl text-secondary font-bold pt-6">REVIEW</p>
+      <div>
+        <p className="text-4xl text-secondary font-bold pt-6">REVIEW</p>
 
-            <form onSubmit={onSubmit} >
-                <div className="form-control">
-                    <label className="label pt-6">
-                        <span className="label-text">Your Review</span>
-                    </label> 
-                    <textarea
-                        required
-                        maxlength="200"
-                        minlength="10"
-                        className="textarea textarea-bordered text-xl h-28" name='Review' placeholder="Send your Review...">
-
-                    </textarea>
-                    <label className="label">
-                        {/* <span className="label-text-alt">Your bio</span>
-                        */}
-                    </label> 
-                </div>
-                <input type="submit" value="Post" className="btn bg-gradient-to-r from-secondary to-primary border-none text-white px-10 " />
-            </form>
-        </div>
+        <form onSubmit={onSubmit}>
+          <div className="form-control">
+            <label className="label pt-6">
+              <span className="label-text">Your Review</span>
+            </label>
+            <textarea
+              required
+              maxLength="200"
+              minLength="10"
+              className="textarea textarea-bordered text-xl h-28"
+              name="Review"
+              placeholder="Send your Review..."
+            ></textarea>
+            <label className="label">
+              {/* <span className="label-text-alt">Your bio</span>
+               */}
+            </label>
+          </div>
+          <input
+            type="submit"
+            value="Post"
+            className="btn bg-gradient-to-r from-secondary to-primary border-none text-white px-10 "
+          />
+        </form>
+      </div>
     );
 };
 

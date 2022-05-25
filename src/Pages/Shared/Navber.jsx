@@ -45,7 +45,6 @@ const Navber = () => {
                   fill="none"
                   viewBox="0 0 24 24"
                   stroke="currentColor"
-                  
                 >
                   <path
                     strokeLinecap="round"
@@ -67,35 +66,69 @@ const Navber = () => {
             </Link>
           </div>
           <div className="navbar-center hidden lg:flex">
-            <ul className="menu menu-horizontal p-0 space-x-5">
-              {menuItems}
-            </ul>
+            <ul className="menu menu-horizontal p-0 space-x-5">{menuItems}</ul>
           </div>
           <div className="navbar-end">
-            {user ? <> <div class="dropdown dropdown-end">
-              <label tabindex="0" >
-              <div class="avatar online">
-                
-                <div class="w-8 rounded-full">
-                  <img src="https://api.lorem.space/image/face?hash=28212" alt='' />
-                </div> 
+            {user ? (
+              <>
+                {" "}
+                <div className="dropdown dropdown-end">
+                  <label tabIndex="0">
+                    <div className="avatar online">
+                      <div className="w-8 rounded-full">
+                        <img
+                          src="https://api.lorem.space/image/face?hash=28212"
+                          alt=""
+                        />
+                      </div>
+                    </div>
+                  </label>
+                  <ul
+                    tabIndex="0"
+                    className="dropdown-content menu flex text-black  p-4  shadow bg-base-100 rounded-box md:w-96"
+                  >
+                    <div className="space-y-4">
+                      <li className="border-b text-lg font-semibold">
+                        Name: {user.displayName}
+                      </li>
+                      <li className="border-b text-lg font-semibold">
+                        Email: {user.email}
+                      </li>
+                      <li className="border-b text-lg font-semibold">
+                        Profile
+                        <input type="file" id="" />
+                      </li>
+                      <li className="btn btn-outline" onClick={logout}>
+                        Sign Out
+                      </li>
+                    </div>
+                  </ul>
                 </div>
-
-              </label>
-              <ul tabindex="0" class="dropdown-content menu flex text-black  p-4  shadow bg-base-100 rounded-box md:w-96">
-              <div className='space-y-4'>
-                <li className='border-b text-lg font-semibold'>Name: {user.displayName}</li>
-                <li className='border-b text-lg font-semibold'>Email: {user.email}</li>
-                <li className='border-b text-lg font-semibold'>Profile<input type="file" id="" /></li>
-                <li className='btn btn-outline' onClick={logout} >Sign Out</li>
-              </div>
-              </ul>
-            </div>
-            <label htmlFor="dashboard-sidebar" className=" drawer-button pl-4 lg:hidden">
-            <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h8m-8 6h16" /></svg>
-            </label>
-            </>
-            :  <Link to='/signup' class="btn">Sign Up</Link>}
+                <label
+                  htmlFor="dashboard-sidebar"
+                  className=" drawer-button pl-4 lg:hidden"
+                >
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    className="h-5 w-5"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth="2"
+                      d="M4 6h16M4 12h8m-8 6h16"
+                    />
+                  </svg>
+                </label>
+              </>
+            ) : (
+              <Link to="/signup" className="btn">
+                Sign Up
+              </Link>
+            )}
           </div>
         </div>
       </>

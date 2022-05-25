@@ -7,13 +7,10 @@ const Banner = () => {
       <div className="md:w-1/2 space-y-2 order-2 md:order-1">
         <p className="font-bold text-sm uppercase">Services</p>
         <p className="text-[25px] md:text-3xl  font-bold">
-          Multimedia products
+          Multimedia Products
         </p>
         <p className="">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. At recusandae
-          iste voluptates iusto velit, rerum ab ratione tempore quae voluptas
-          quos minima similique soluta nihil. Iure aspernatur dicta facilis
-          blanditiis!
+        A manufacturer is a person or company that produces finished goods from raw materials by using various tools, equipment, and processes, and then sells the goods to consumers, wholesalers, distributors, retailers, or to other manufacturers for the production of more complex goods.
         </p>
         <PrimaryButton>get started</PrimaryButton>
       </div>

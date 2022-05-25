@@ -16,6 +16,8 @@ import MyProfile from './Pages/MyProfile/MyProfile';
 import Blogs from './Pages/Blogs/Blogs';
 import MyPortfolio from './Pages/MyPortfolio/MyPortfolio';
 import Purchase from './Pages/Purchase.jsx/Purchase';
+import Payment from './Pages/Dashboard/Payment';
+import Users from './Pages/Dashboard/Users';
 
 function App() {
   return (
@@ -58,9 +60,12 @@ function App() {
         <Route path="/dashboard" element={<RequireAuth><Dashboard /></RequireAuth>}>
           {/* nested routes */}
           <Route index element={<MyOrders />}></Route>
+          {/* <Route path='orders' element={<MyOrders />}></Route> */}
           <Route path="review" element={<AddAReview />}></Route>
           <Route path="myprofile" element={<MyProfile />}></Route>
-
+          <Route path="payment/:id" element={<Payment />} ></Route>
+          <Route path="orders/payment/:id" element={<Payment />}></Route>
+          <Route path="users" element={<Users />}></Route>
         </Route>
 
         <Route path="/blogs" element={<Blogs />} />
@@ -68,7 +73,7 @@ function App() {
 
         <Route path="/login" element={<Login />} />
         <Route path="/signup" element={<SignUp />} />
-        <Route path="/*" element={<NotFound />} />
+        <Route path="*" element={<NotFound />} />
       </Routes>
       <ToastContainer />
     </div>
