@@ -23,13 +23,16 @@ const AddAReview = () => {
     }
     return (
       <div>
-        <p className="text-4xl text-secondary font-bold pt-6">REVIEW</p>
+        <p className="text-4xl  font-bold pt-6">REVIEW</p>
 
         <form onSubmit={onSubmit}>
           <div className="form-control">
             <label className="label pt-6">
               <span className="label-text">Your Review</span>
             </label>
+            {/* <img src={photoURL} alt="" /> */}
+            {/* <h2>{displayName}</h2> */}
+            <input type="text" value={displayName} />
             <textarea
               required
               maxLength="200"
@@ -46,7 +49,7 @@ const AddAReview = () => {
           <input
             type="submit"
             value="Post"
-            className="btn bg-gradient-to-r from-secondary to-primary border-none text-white px-10 "
+            className="btn bg-gradient-to-r  from-sky-500 to-[#2BAAA9] border-none text-white px-10 "
           />
         </form>
       </div>

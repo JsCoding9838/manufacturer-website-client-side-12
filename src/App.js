@@ -18,6 +18,10 @@ import MyPortfolio from './Pages/MyPortfolio/MyPortfolio';
 import Purchase from './Pages/Purchase.jsx/Purchase';
 import Payment from './Pages/Dashboard/Payment';
 import Users from './Pages/Dashboard/Users';
+import ManageAllOrders from './Pages/Dashboard/ManageAllOrders';
+import MakeAdmin from './Pages/Dashboard/MakeAdmin';
+
+
 
 function App() {
   return (
@@ -61,12 +65,16 @@ function App() {
           {/* nested routes */}
           <Route index element={<MyOrders />}></Route>
           {/* <Route path='orders' element={<MyOrders />}></Route> */}
+          
           <Route path="review" element={<AddAReview />}></Route>
+          <Route path="manageorders" element={<ManageAllOrders />}></Route>
+          <Route path="makeadmin" element={<MakeAdmin />}></Route>
           <Route path="myprofile" element={<MyProfile />}></Route>
           <Route path="payment/:id" element={<Payment />} ></Route>
           <Route path="orders/payment/:id" element={<Payment />}></Route>
           <Route path="users" element={<Users />}></Route>
         </Route>
+         
 
         <Route path="/blogs" element={<Blogs />} />
         <Route path="/myportfolio" element={<MyPortfolio />} />
