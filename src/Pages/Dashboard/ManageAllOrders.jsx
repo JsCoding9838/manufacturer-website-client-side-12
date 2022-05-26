@@ -15,12 +15,16 @@ import Loading from '../Shared/Loading';
 
 
 const ManageAllOrders = () => {
-    const { isLoading, error, data:allOrders, refetch } = useQuery('order', () =>
-    fetch(`http://localhost:5000/order/`,{
-      
-      
-    }).then((res) => res.json())
-  );
+    const {
+      isLoading,
+      error,
+      data: allOrders,
+      refetch,
+    } = useQuery("order", () =>
+      fetch(`https://fathomless-beach-67972.herokuapp.com/order/`, {}).then(
+        (res) => res.json()
+      )
+    );
   console.log(allOrders);
   if(isLoading){
       return <Loading/>

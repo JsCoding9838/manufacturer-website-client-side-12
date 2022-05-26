@@ -14,7 +14,15 @@ const AddAReview = () => {
         event.preventDefault();
         const review = event.target.Review.value;
         // console.log(review);
-        const {data} = await axios.post('http://localhost:5000/review',{displayName:displayName,email:email, photoURL:photoURL,  review:review})
+        const { data } = await axios.post(
+          "https://fathomless-beach-67972.herokuapp.com/review",
+          {
+            displayName: displayName,
+            email: email,
+            photoURL: photoURL,
+            review: review,
+          }
+        );
         // console.log(data);
         if(data.insertedId){
             toast.success('your review successfully')

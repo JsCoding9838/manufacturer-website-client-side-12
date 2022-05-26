@@ -6,8 +6,15 @@ import auth from '../../firebase.init';
 const MyOrders = () => {
   const [user] = useAuthState(auth);
   
-  const { isLoading, error, data:myOrders, refetch } = useQuery('order', () =>
-    fetch(`http://localhost:5000/order/${user.email}`).then((res) => res.json())
+  const {
+    isLoading,
+    error,
+    data: myOrders,
+    refetch,
+  } = useQuery("order", () =>
+    fetch(
+      `https://fathomless-beach-67972.herokuapp.com/order/${user.email}`
+    ).then((res) => res.json())
   );
   // console.log(myOrders);
   if(isLoading){

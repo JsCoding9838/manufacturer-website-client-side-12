@@ -13,20 +13,23 @@ const useToken = user => {
             const currentUser = {email: email, displayName: user?.user?.displayName};
            
             
-            fetch(`http://localhost:5000/user/${email}}`, {
-                method: 'PUT',
-                headers: { 
-                    'content-type': 'application/json'
+            fetch(
+              `https://fathomless-beach-67972.herokuapp.com/user/${email}}`,
+              {
+                method: "PUT",
+                headers: {
+                  "content-type": "application/json",
                 },
-                body:JSON.stringify(currentUser)
-            })
-            .then(res => res.json())
-            .then(data => {
+                body: JSON.stringify(currentUser),
+              }
+            )
+              .then((res) => res.json())
+              .then((data) => {
                 // console.log('data insid Token', data)
                 const accessToken = data.token;
-                localStorage.setItem('Access_token', accessToken)
+                localStorage.setItem("Access_token", accessToken);
                 setToken(accessToken);
-            })
+              });
         }
     }, [user])
     return token;

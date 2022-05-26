@@ -7,11 +7,11 @@ const AllServiceTools = () => {
     const [tools, setTools] = useState([]);
 
     useEffect(() => {
-        fetch("http://localhost:5000/tools")
-        .then((res) => res.json())
-        .then((data) => {
+        fetch("https://fathomless-beach-67972.herokuapp.com/tools")
+          .then((res) => res.json())
+          .then((data) => {
             return setTools(data);
-        });
+          });
     }, []);
 
     const alertHandle = () => {

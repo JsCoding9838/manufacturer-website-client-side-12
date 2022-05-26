@@ -8,7 +8,9 @@ const MyOrder = ({ order, refetch }) => {
   const deleteHandler = async (id) => {
     const confirm = window.confirm("Are you sure you want to delete");
     if (confirm) {
-      const { data } = await axios.delete(`http://localhost:5000/order/${id}`);
+      const { data } = await axios.delete(
+        `https://fathomless-beach-67972.herokuapp.com/order/${id}`
+      );
       if (data) {
         toast.success("Order deleted successfully");
 

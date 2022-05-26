@@ -13,9 +13,10 @@ const Payment = () => {
     // console.log(id);
     useEffect(() => {
       const paymentProduct = async () => {
-        const { data } = await axios.get(`http://localhost:5000/order/${id}`,{
-          
-        });
+        const { data } = await axios.get(
+          `https://fathomless-beach-67972.herokuapp.com/order/${id}`,
+          {}
+        );
         setPayProduct(data);
       };
       paymentProduct();

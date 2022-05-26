@@ -5,11 +5,11 @@ const Reviews = () => {
 const [reviews, setReviews] = useState([]); 
 useEffect(()=>{
 
-fetch('http://localhost:5000/review')
-.then(res => res.json())
-.then(data => {
-    return setReviews(data)
-})
+fetch("https://fathomless-beach-67972.herokuapp.com/review")
+  .then((res) => res.json())
+  .then((data) => {
+    return setReviews(data);
+  });
 },[])
     return (
         <div className="my-12">

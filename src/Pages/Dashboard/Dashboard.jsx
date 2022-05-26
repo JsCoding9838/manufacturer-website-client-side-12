@@ -12,7 +12,9 @@ const Dashboard = () => {
     useEffect(() => {
   const allUser = async()=>{
    if(email){
-    const {data} = await axios.get(`http://localhost:5000/user/${email}`)
+    const { data } = await axios.get(
+      `https://fathomless-beach-67972.herokuapp.com/user/${email}`
+    );
     setAdminRule(data);
     console.log(data);
    }

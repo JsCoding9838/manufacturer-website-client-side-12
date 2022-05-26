@@ -7,29 +7,32 @@ import axios from "axios";
 
 
 const ManageAllProducts = () => {
-    const { isLoading, error, data:tools, refetch } = useQuery('order', () =>
-    fetch(`http://localhost:5000/tools`,{
-      
-      
-    }).then((res) => res.json())
-  );
-  if(isLoading){
-      return <Loading/>
-  }
-  
-  const deleteHandler = async(id)=>{
-      const confirm = window.confirm('Are you sure you want to delete')
-      if(confirm){
-        if(id){
-            const {data} = await axios.delete(`http://localhost:5000/tools/${id}`)
-            console.log(data);
-            refetch()
-            
-        }
+    const {
+      isLoading,
+      error,
+      data: tools,
+      refetch,
+    } = useQuery("order", () =>
+      fetch(`https://fathomless-beach-67972.herokuapp.com/tools`, {}).then(
+        (res) => res.json()
+      )
+    );
+    if (isLoading) {
+      return <Loading />;
+    }
 
+    const deleteHandler = async (id) => {
+      const confirm = window.confirm("Are you sure you want to delete");
+      if (confirm) {
+        if (id) {
+          const { data } = await axios.delete(
+            `https://fathomless-beach-67972.herokuapp.com/tools/${id}`
+          );
+          console.log(data);
+          refetch();
+        }
       }
-   
-  }
+    };
     return (
         <>
             <div className="p-3 md:py-7 md:px-10">

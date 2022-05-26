@@ -15,23 +15,20 @@ const CheckoutForm = ({ payProduct }) => {
 
   useEffect(() => {
     const payment = async () => {
-     if(totalprice){
-       
-      const { data } = await axios.post("http://localhost:5000/payment", {
-        totalprice,
-        
-      });
-     if(data.clientSecret){
-       
-    // console.log(data.clientSecret,'data');
-      setClientSecret(data.clientSecret)
-     }
-     }
-
-     
+      if (totalprice) {
+        const { data } = await axios.post(
+          "https://fathomless-beach-67972.herokuapp.com/payment",
+          {
+            totalprice,
+          }
+        );
+        if (data.clientSecret) {
+          // console.log(data.clientSecret,'data');
+          setClientSecret(data.clientSecret);
+        }
+      }
     };
     payment();
-    
   }, [totalprice]);
 
   const handleSubmit = async (event) => {
@@ -56,10 +53,10 @@ const CheckoutForm = ({ payProduct }) => {
       setErros(error?.message);
     } else {
       // console.log("[PaymentMethod]", paymentMethod);
-      setErros('')
+      setErros("");
     }
     // ----confirm payment
-    const {paymentIntent, payError} = await stripe.confirmCardPayment(
+    const { paymentIntent, payError } = await stripe.confirmCardPayment(
       clientSecret,
       {
         payment_method: {
@@ -68,22 +65,25 @@ const CheckoutForm = ({ payProduct }) => {
             email: email,
           },
         },
-      },
+      }
     );
-    if(payError){
-      setErros(payError?.message)
-    }
-    else{
-      toast.success('Congrats!, Your payment is completed',{id:1})
-      setTransactionId(paymentIntent.id)
+    if (payError) {
+      setErros(payError?.message);
+    } else {
+      toast.success("Congrats!, Your payment is completed", { id: 1 });
+      setTransactionId(paymentIntent.id);
       // console.log(paymentIntent);
-     if(paymentIntent.id){
-      const {data}= await axios.patch(`http://localhost:5000/order/${_id}`,{
-        email: email, transactionId: paymentIntent.id
-      }) 
-     }
-     
-      setErros('')
+      if (paymentIntent.id) {
+        const { data } = await axios.patch(
+          `https://fathomless-beach-67972.herokuapp.com/order/${_id}`,
+          {
+            email: email,
+            transactionId: paymentIntent.id,
+          }
+        );
+      }
+
+      setErros("");
     }
   };
 // console.log(transactionId);

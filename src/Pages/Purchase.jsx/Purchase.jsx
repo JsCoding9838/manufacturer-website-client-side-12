@@ -14,7 +14,9 @@ const Purchase = () => {
   const [products, setProducts] = useState({});
   useEffect(() => {
     const product = async () => {
-      const { data } = await axios.get(`http://localhost:5000/products/${id}`);
+      const { data } = await axios.get(
+        `https://fathomless-beach-67972.herokuapp.com/products/${id}`
+      );
       setProducts(data);
     };
     product();

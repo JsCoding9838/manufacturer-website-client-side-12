@@ -43,7 +43,7 @@ const AddProduct = () => {
             price_per_unit: parseInt(data.price),
             image: image,
           };
-          fetch("http://localhost:5000/tools", {
+          fetch("https://fathomless-beach-67972.herokuapp.com/tools", {
             method: "POST",
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify(product),
