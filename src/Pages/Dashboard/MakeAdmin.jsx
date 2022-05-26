@@ -51,7 +51,7 @@ const { isLoading, error, data:allUsers, refetch } = useQuery('user', () =>
 
     }
     makeAdmin()
-
+// uncomplete patch api
     const removeAdmin = async(email) =>{
       if(email){
         const {data} = await axios.patch(`http://localhost:5000/user/admin/${email}`)
