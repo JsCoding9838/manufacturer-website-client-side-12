@@ -1,7 +1,26 @@
-import React from "react";
+import { data } from "autoprefixer";
+import axios from "axios";
+import React, { useEffect, useState } from "react";
+import { useAuthState } from "react-firebase-hooks/auth";
 import { Link, Outlet } from "react-router-dom";
+import auth from "../../firebase.init";
 
 const Dashboard = () => {
+    const [user] = useAuthState(auth)
+    const email = (user.email);
+    const [adminRule,setAdminRule] = useState({})
+    useEffect(() => {
+  const allUser = async()=>{
+   if(email){
+    const {data} = await axios.get(`http://localhost:5000/user/${email}`)
+    setAdminRule(data);
+    console.log(data);
+   }
+   
+  
+  }
+  allUser()
+    },[email])
     return (
 
         <div className="drawer drawer-mobile">
@@ -19,10 +38,12 @@ const Dashboard = () => {
                     <li><Link to="/dashboard">My Orders</Link></li>
                     <li><Link to="/dashboard/review">Add a review</Link></li>
                     <li><Link to="/dashboard/myprofile">My Profile</Link></li>
+                   {adminRule.rule &&  <>
                     <li><Link to="/dashboard/manageorders">Manage All Orders</Link></li>
-                    <li><Link to="/dashboard/addproduct">Add a Product</Link></li>
+                    <li><Link to="/dashboard/addproduct">Add A Product</Link></li>
                     <li><Link to="/dashboard/makeadmin">Make Admin</Link></li>
-                    <li><Link to="/dashboard/manageproduct">Manage Products</Link></li>
+                    <li><Link to="/dashboard/manageproducts">Manage Products</Link></li>
+                   </> }
                 </ul>
             </div>
         </div>

@@ -20,6 +20,8 @@ import Payment from './Pages/Dashboard/Payment';
 import Users from './Pages/Dashboard/Users';
 import ManageAllOrders from './Pages/Dashboard/ManageAllOrders';
 import MakeAdmin from './Pages/Dashboard/MakeAdmin';
+import ManageAllProducts from './Pages/Dashboard/ManageAllProducts';
+import AddProduct from './AddProduct';
 
 
 
@@ -69,6 +71,8 @@ function App() {
           <Route path="review" element={<AddAReview />}></Route>
           <Route path="manageorders" element={<ManageAllOrders />}></Route>
           <Route path="makeadmin" element={<MakeAdmin />}></Route>
+          <Route path="manageproducts" element={<ManageAllProducts />}></Route>
+          <Route path="addproduct" element={<AddProduct />}></Route>
           <Route path="myprofile" element={<MyProfile />}></Route>
           <Route path="payment/:id" element={<Payment />} ></Route>
           <Route path="orders/payment/:id" element={<Payment />}></Route>

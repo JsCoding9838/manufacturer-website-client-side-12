@@ -1,0 +1,72 @@
+
+import { useQuery } from "react-query";
+import Loading from "../Shared/Loading";
+import PrimaryButton from "../Shared/PrimaryButton";
+import React from 'react';
+import axios from "axios";
+
+
+const ManageAllProducts = () => {
+    const { isLoading, error, data:tools, refetch } = useQuery('order', () =>
+    fetch(`http://localhost:5000/tools`,{
+      
+      
+    }).then((res) => res.json())
+  );
+  if(isLoading){
+      return <Loading/>
+  }
+  
+  const deleteHandler = async(id)=>{
+      const confirm = window.confirm('Are you sure you want to delete')
+      if(confirm){
+        if(id){
+            const {data} = await axios.delete(`http://localhost:5000/tools/${id}`)
+            console.log(data);
+            refetch()
+            
+        }
+
+      }
+   
+  }
+    return (
+        <>
+            <div className="p-3 md:py-7 md:px-10">
+                <h2 className="text-center py-5 uppercase mb-3 font-bold text-[22px] md:text-5xl text-[#2BAAA9]">
+                    Service Tools
+                </h2>
+                <div className="grid gap-5 md:grid-cols-3 justify-items-centen">
+                    { tools.map(tool => <div key={tool?._id} className="card card-compact bg-base-100 shadow-xl">
+                        <figure>
+                            <img
+                            src={tool?.image}
+                            alt="Shoes"
+                            />
+                        </figure>
+                        <div className="card-body">
+                            <h2 className="card-title text-[#2BAAA9]">{tool?.name}</h2>
+                            <p className="">
+                            {tool?.description}
+                            </p>
+                            <p className="font-semibold">Min-order-quantity: <span className="font-normal">{tool?.min_order_quantity}</span></p>
+                            <p className="font-semibold">Available-quantity: <span className="font-normal">{tool?.available_quantity}</span></p>
+                            <p className="font-semibold">Price-per-unit: $<span className="font-normal">{tool?.price_per_unit}</span></p>
+                            <div onClick={()=>deleteHandler(tool._id)} className="card-actions justify-end">
+                          <PrimaryButton>
+                               delete
+                               </PrimaryButton>
+                            </div>
+                        </div>
+                    </div>)}
+                </div>
+               
+            </div>
+        </>
+    );
+};
+
+
+export default ManageAllProducts;
+
+
