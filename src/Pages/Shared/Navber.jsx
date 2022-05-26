@@ -7,6 +7,7 @@ import auth from '../../firebase.init';
 
 const Navber = () => {
     const [user] = useAuthState(auth);
+  
 
     const logout = () => {
       signOut(auth);
@@ -77,7 +78,7 @@ const Navber = () => {
                     <div className="avatar online">
                       <div className="w-8 rounded-full">
                         <img
-                          src="https://api.lorem.space/image/face?hash=28212"
+                          src={user.photoURL ? user.photoURL : 'https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460__340.png'}
                           alt=""
                         />
                       </div>

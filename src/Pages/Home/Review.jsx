@@ -7,7 +7,7 @@ const Review = ({ reviewdetail }) => {
       <img
         className="p-8 rounded-t-lg"
         src={
-          "https://static.remove.bg/remove-bg-web/588fbfdd2324490a4329d4ad22d1bd436e1d384a/assets/start_remove-c851bdf8d3127a24e2d137a55b1b427378cd17385b01aec6e59d5d4b5f39d2ec.png"
+          photoURL ? photoURL : 'https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460__340.png'
         }
         alt="product img"
       />
@@ -62,14 +62,6 @@ const Review = ({ reviewdetail }) => {
             4.0
           </span>
         </div>
-        {
-        /* 
-        <div className="flex justify-between items-center">
-            <span className="text-3xl font-bold text-gray-900 dark:text-white">$599</span>
-            <a href="#" className="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Add to cart</a>
-        </div> 
-        */
-        }
       </div>
     </div>
   );
