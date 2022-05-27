@@ -61,7 +61,7 @@ const AddProduct = () => {
   return (
     <div className="flex justify-center">
       <div className="card w-1/2 bg-base-100 shadow-xl">
-        <form onSubmit={handleSubmit(onSubmit)} className="card-body">
+        <form onSubmit={handleSubmit(onSubmit)} className="card-body py-0">
           <label className="">
             <span className="label-text">Product Name</span>
           </label>
@@ -77,7 +77,7 @@ const AddProduct = () => {
           <input
             {...register("description", { required: true })}
             type="text"
-            className="input  py-10 input-bordered w-full "
+            className="input  py-8 input-bordered w-full "
           />
           <label className="">
             <span className="label-text">Abvailable Product</span>
@@ -121,7 +121,7 @@ const AddProduct = () => {
             className="input input-bordered w-full "
           />
 
-          <input type="submit" value="Post" className="btn btn-secondary" />
+          <input type="submit" value="Add Product" className="btn bg-gradient-to-r  from-sky-500 to-[#2BAAA9] border-none" />
         </form>
       </div>
     </div>

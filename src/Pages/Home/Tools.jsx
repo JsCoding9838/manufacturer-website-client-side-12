@@ -42,7 +42,7 @@ const Tools = () => {
                     </div>)}
                 </div>
                 <div className="text-2xl md:text-4xl font-semibold text-center py-5 card-actions justify-end">
-                    <Link to="allServiceTools" className="btn btn-wide outline font-semibold border-none bg-gradient-to-r  from-[#2BAAA9] to-sky-800">See All Tools</Link>
+                    <Link to="allServiceTools" className="btn btn-outline font-semibold">See All Tools</Link>
                 </div>
             </div>
         </>

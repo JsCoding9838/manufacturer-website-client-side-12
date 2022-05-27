@@ -36,13 +36,13 @@ const Navber = () => {
 
     return (
       <>
-        <div className="navbar md:px-10 sticky top-0 z-[100] bg-white">
+        <div className="navbar md:px-10 sticky top-0 z-[100] bg-gradient-to-r  from-sky-100 to-[#a5cccc]">
           <div className="navbar-start">
             <div className="dropdown">
-              <label tabIndex="0" className="btn btn-ghost lg:hidden pl-0">
+              <label tabIndex="0" className="btn btn-ghost lg:hidden">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
-                  className="h-5 w-5"
+                  className="h-6 w-6"
                   fill="none"
                   viewBox="0 0 24 24"
                   stroke="currentColor"
@@ -62,8 +62,8 @@ const Navber = () => {
                 {menuItems}
               </ul>
             </div>
-            <Link to="/" className="font-semibold text-[18px] md:text-xl">
-              Manufactur's Care
+            <Link to="/" className="font-bold text-[18px] md:text-xl italic">
+              MOO <span className="text-red-500">Z</span> O
             </Link>
           </div>
           <div className="navbar-center hidden lg:flex">
@@ -86,14 +86,14 @@ const Navber = () => {
                   </label>
                   <ul
                     tabIndex="0"
-                    className="dropdown-content menu flex text-black  p-4  shadow bg-base-100 rounded-box md:w-96"
+                    className="dropdown-content text-black bg-gray-200 top-12 p-4  shadow  rounded-box "
                   >
                     <div className="space-y-4">
-                      <li className="border-b text-lg font-semibold">
-                        Name: {user.displayName}
+                      <li className="border-b text-lg">
+                        <span className="font-normal text-gray-400">{user.displayName}</span>
                       </li>
-                      <li className="border-b text-lg font-semibold">
-                        Email: {user.email}
+                      <li className="border-b text-lg">
+                        <span className="font-normal text-gray-400">{user.email}</span>
                       </li>
                       <li className="border-b text-lg font-semibold">
                         Profile
@@ -107,11 +107,11 @@ const Navber = () => {
                 </div>
                 <label
                   htmlFor="dashboard-sidebar"
-                  className=" drawer-button pl-4 lg:hidden"
+                  className=" drawer-button px-2 lg:hidden"
                 >
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
-                    className="h-5 w-5"
+                    className="h-6 w-6"
                     fill="none"
                     viewBox="0 0 24 24"
                     stroke="currentColor"

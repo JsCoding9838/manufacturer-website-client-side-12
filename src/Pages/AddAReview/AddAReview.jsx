@@ -31,35 +31,32 @@ const AddAReview = () => {
     }
     return (
       <div>
-        <p className="text-4xl  font-bold pt-6">REVIEW</p>
 
-        <form onSubmit={onSubmit}>
+        <div className="px-4 flex justify-center md:justify-start items-center">
+        <form className="" onSubmit={onSubmit}>
           <div className="form-control">
-            <label className="label pt-6">
-              <span className="label-text">Your Review</span>
-            </label>
-            {/* <img src={photoURL} alt="" /> */}
-            {/* <h2>{displayName}</h2> */}
-            <input type="text" value={displayName} />
+            <img className="w-1/2 mx-auto rounded-full mb-4"
+              src={photoURL ? photoURL : 'https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460__340.png'}
+              alt=""
+            />
+            <input type="text" class="input input-bordered w-full  text-2xl mb-4" value={displayName} />
+            <input type="text" class="input input-bordered w-ful  text-2xl mb-4" value={user?.email} />
             <textarea
               required
               maxLength="200"
               minLength="10"
-              className="textarea textarea-bordered text-xl h-28"
+              className="textarea textarea-bordered text-xl w-full  h-28 mb-4"
               name="Review"
               placeholder="Send your Review..."
             ></textarea>
-            <label className="label">
-              {/* <span className="label-text-alt">Your bio</span>
-               */}
-            </label>
-          </div>
+            </div>
           <input
             type="submit"
-            value="Post"
+            value="Add a review"
             className="btn bg-gradient-to-r  from-sky-500 to-[#2BAAA9] border-none text-white px-10 "
           />
         </form>
+        </div>
       </div>
     );
 };

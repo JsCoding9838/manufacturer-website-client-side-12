@@ -28,7 +28,7 @@ const ManageAllProducts = () => {
           const { data } = await axios.delete(
             `https://fathomless-beach-67972.herokuapp.com/tools/${id}`
           );
-          console.log(data);
+          // console.log(data);
           refetch();
         }
       }
@@ -36,9 +36,9 @@ const ManageAllProducts = () => {
     return (
         <>
             <div className="p-3 md:py-7 md:px-10">
-                <h2 className="text-center py-5 uppercase mb-3 font-bold text-[22px] md:text-5xl text-[#2BAAA9]">
+                {/* <h2 className="text-center py-5 uppercase mb-3 font-bold text-[22px] md:text-5xl text-[#2BAAA9]">
                     Service Tools
-                </h2>
+                </h2> */}
                 <div className="grid gap-5 md:grid-cols-3 justify-items-centen">
                     { tools.map(tool => <div key={tool?._id} className="card card-compact bg-base-100 shadow-xl">
                         <figure>
@@ -56,7 +56,7 @@ const ManageAllProducts = () => {
                             <p className="font-semibold">Available-quantity: <span className="font-normal">{tool?.available_quantity}</span></p>
                             <p className="font-semibold">Price-per-unit: $<span className="font-normal">{tool?.price_per_unit}</span></p>
                             <div onClick={()=>deleteHandler(tool._id)} className="card-actions justify-end">
-                          <PrimaryButton>
+                              <PrimaryButton>
                                delete
                                </PrimaryButton>
                             </div>

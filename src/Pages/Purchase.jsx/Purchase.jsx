@@ -91,11 +91,11 @@ const Purchase = () => {
 
           <input
             disabled={
-              quantity <= products?.min_order_quantity ||
+              quantity < products?.min_order_quantity ||
               quantity > products?.available_quantity
             }
             className={
-              quantity <= products?.min_order_quantity ||
+              quantity < products?.min_order_quantity ||
               quantity > products?.available_quantity
                 ? "btn bg-gradient-to-r  from-sky-200 to-[#3a5353] mb-4 border-none text-white mt-8 "
                 : "mt-8 btn bg-gradient-to-r  from-sky-500 to-[#2BAAA9] mb-4  border-none text-white "

@@ -2,7 +2,7 @@ import React from 'react';
 
 const Footer = () => {
     return (
-      <footer className="bg-gray-200 p-10">
+      <footer className="bg-gray-200 p-4 md:p-10">
         <div className="footer grid grid-cols-2 lg:grid-cols-3 sm:justify-items-center">
           <div>
             <span className="footer-title">Services</span>
@@ -26,7 +26,7 @@ const Footer = () => {
           </div>
         </div>
         <div className="mt-10 text-center">
-          <div className="p-4 w-full text-center bg-white rounded-lg border shadow-md sm:p-8 dark:bg-gray-800 dark:border-gray-700">
+          <div className="p-2 w-full text-center bg-white rounded-lg border shadow-md sm:p-8 dark:bg-gray-800 dark:border-gray-700">
             <h5 className="mb-2 text-xl md:text-3xl font-bold text-gray-900 dark:text-white">
               Work fast from anywhere
             </h5>
@@ -37,7 +37,7 @@ const Footer = () => {
             </p>
             <div className="justify-center items-center space-y-4 sm:flex sm:space-y-0 sm:space-x-4">
               <a
-                href="#"
+                href="https://www.apple.com/app-store/" target="_blank"
                 className="w-full sm:w-auto bg-gray-800 hover:bg-gray-700 focus:ring-4 focus:outline-none focus:ring-gray-300 text-white rounded-lg inline-flex items-center justify-center px-4 py-2.5 dark:bg-gray-700 dark:hover:bg-gray-600 dark:focus:ring-gray-700"
               >
                 <svg
@@ -63,7 +63,7 @@ const Footer = () => {
                 </div>
               </a>
               <a
-                href="#"
+                href="https://play.google.com/store/games" target="_blank"
                 className="w-full sm:w-auto bg-gray-800 hover:bg-gray-700 focus:ring-4 focus:outline-none focus:ring-gray-300 text-white rounded-lg inline-flex items-center justify-center px-4 py-2.5 dark:bg-gray-700 dark:hover:bg-gray-600 dark:focus:ring-gray-700"
               >
                 <svg
