@@ -70,10 +70,10 @@ const Blogs = () => {
                             <h5 className="flex justify-center items-center space-x-5 text-gray-900 text-4xl font-medium mb-2 text-center">
                             </h5>
                             <p className="text-gray-700 text-base">
-                            JWT Means JSON Web Token. is an open standard used to share security information between two  parties a client and server. Each JWT contains encoded Json objects including a set of claims. JWTs are signed using a cryptographic algorighm to ensure that claims can not be altered after the token is issued. And Specialy a JWT is string made up of three parts separated by dots. and serialized using base 64. (Header and the payload) and The signature. Every developer shoul know how does it jwt works.
-
+                                If you update it directly, calling the setState() afterward may just replace the update you made.
+                                When you directly update the state, it does not change this.state immediately. Instead, it creates a pending state transition, and accessing it after calling this method will only return the present value.
+                                You will lose control of the state across all components.
                             </p>
-                            
                         </div>
                     </div>
                 </div>
@@ -87,8 +87,7 @@ const Blogs = () => {
                             <h5 className="flex justify-center items-center space-x-5 text-gray-900 text-4xl font-medium mb-2 text-center">
                             </h5>
                             <p className="text-gray-700 text-base">
-                            JWT Means JSON Web Token. is an open standard used to share security information between two  parties a client and server. Each JWT contains encoded Json objects including a set of claims. JWTs are signed using a cryptographic algorighm to ensure that claims can not be altered after the token is issued. And Specialy a JWT is string made up of three parts separated by dots. and serialized using base 64. (Header and the payload) and The signature. Every developer shoul know how does it jwt works.
-
+                            Unit testing ensures that all code meets quality standards before it's deployed. This ensures a reliable engineering environment where quality is paramount. Over the course of the product development life cycle, unit testing saves time and money, and helps developers write better code, more efficiently.
                             </p>
                             
                         </div>

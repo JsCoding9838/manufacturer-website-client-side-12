@@ -1,8 +1,8 @@
-# Menufacture Care
+# MOOZO
 
 
 ==================================================================
-# Menufacture Care [Live link](https://assignment-12-with-node.web.app)
+# MOOZO [Live link](https://assignment-12-with-node.web.app)
 ==================================================================
 
 
